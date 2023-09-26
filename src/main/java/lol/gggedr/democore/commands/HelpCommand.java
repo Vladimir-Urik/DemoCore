@@ -15,6 +15,8 @@ public class HelpCommand implements CommandExecutor {
         sender.sendMessage("    §f/help");
         sender.sendMessage("    §f/fly");
         sender.sendMessage("    §f/plugins");
+        sender.sendMessage("    §f/version");
+        sender.sendMessage("    §f/spawn");
         sender.sendMessage("    §f");
         sender.sendMessage("    §fIf you have any questions please take advantage of");
         sender.sendMessage("    §four §csupport §fon §9Discord§f.");

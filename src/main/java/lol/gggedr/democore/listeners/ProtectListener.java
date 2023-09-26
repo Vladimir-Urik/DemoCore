@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import lol.gggedr.democore.DemoCore;
 import org.bukkit.Bukkit;
 import org.bukkit.GameMode;
+import org.bukkit.Particle;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -46,6 +47,7 @@ public class ProtectListener implements Listener {
     @EventHandler
     public void onBlockPlace(BlockBreakEvent event) {
         event.setCancelled(true);
+        event.getPlayer().spawnParticle(Particle.SMOKE_NORMAL, event.getBlock().getLocation().add(0, 1, 0), 10);
     }
 
     @EventHandler
@@ -113,8 +115,14 @@ public class ProtectListener implements Listener {
         event.getPlayer().setFoodLevel(20);
         event.getPlayer().setLevel(1);
         event.getPlayer().getInventory().clear();
+        event.setJoinMessage("§8[§a+§8] §f"+ event.getPlayer().getName() +" §7joined the server.");
 
         pickupRandomGroup(event.getPlayer());
+    }
+
+    @EventHandler
+    public void onQuit(PlayerQuitEvent event) {
+        event.setQuitMessage("§8[§c-§8] §f"+ event.getPlayer().getName() +" §7left the server.");
     }
 
     private void pickupRandomGroup(Player player) {

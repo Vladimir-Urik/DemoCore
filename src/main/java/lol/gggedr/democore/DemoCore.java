@@ -2,6 +2,7 @@ package lol.gggedr.democore;
 
 import lol.gggedr.democore.commands.FlyCommand;
 import lol.gggedr.democore.commands.HelpCommand;
+import lol.gggedr.democore.commands.SpawnCommand;
 import lol.gggedr.democore.listeners.CommandsListener;
 import lol.gggedr.democore.listeners.ProtectListener;
 import org.bukkit.Location;
@@ -25,6 +26,7 @@ public final class DemoCore extends JavaPlugin {
 
         getCommand("help").setExecutor(new HelpCommand());
         getCommand("fly").setExecutor(new FlyCommand());
+        getCommand("spawn").setExecutor(new SpawnCommand());
     }
 
     @Override

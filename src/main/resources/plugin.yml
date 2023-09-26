@@ -8,3 +8,6 @@ commands:
   fly:
     description: Toggles fly mode
     usage: /fly
+  spawn:
+    description: Teleports you to spawn
+    usage: /spawn
