@@ -1,0 +1,10 @@
+name: DemoCore
+version: '${version}'
+main: lol.gggedr.democore.DemoCore
+commands:
+  help:
+    description: Shows the help menu
+    usage: /help
+  fly:
+    description: Toggles fly mode
+    usage: /fly
