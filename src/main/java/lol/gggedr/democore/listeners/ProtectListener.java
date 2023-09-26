@@ -126,10 +126,11 @@ public class ProtectListener implements Listener {
 
         player.getServer().dispatchCommand(console, clearCommand);
         player.getServer().dispatchCommand(console, groupCommand);
+        player.setFlying(false);
 
         Bukkit.getScheduler().runTaskLater(DemoCore.getInstance(), () -> {
             sendWelcomeMessage(player);
-        }, 20L * 1L);
+        }, 20L);
     }
 
     private void sendWelcomeMessage(Player player) {

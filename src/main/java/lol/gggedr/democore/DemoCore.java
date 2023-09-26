@@ -2,6 +2,7 @@ package lol.gggedr.democore;
 
 import lol.gggedr.democore.commands.FlyCommand;
 import lol.gggedr.democore.commands.HelpCommand;
+import lol.gggedr.democore.listeners.CommandsListener;
 import lol.gggedr.democore.listeners.ProtectListener;
 import org.bukkit.Location;
 import org.bukkit.plugin.java.JavaPlugin;
@@ -20,6 +21,8 @@ public final class DemoCore extends JavaPlugin {
         instance = this;
 
         getServer().getPluginManager().registerEvents(new ProtectListener(), this);
+        getServer().getPluginManager().registerEvents(new CommandsListener(), this);
+
         getCommand("help").setExecutor(new HelpCommand());
         getCommand("fly").setExecutor(new FlyCommand());
     }

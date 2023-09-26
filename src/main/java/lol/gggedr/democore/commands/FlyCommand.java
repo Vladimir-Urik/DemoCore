@@ -13,10 +13,10 @@ public class FlyCommand implements CommandExecutor {
 
         if (player.getAllowFlight()) {
             player.setAllowFlight(false);
-            player.sendMessage("§8[§cFly§8] §7Flight disabled.");
+            player.sendMessage("§8[§cFly§8] §fFlight disabled.");
         } else {
             player.setAllowFlight(true);
-            player.sendMessage("§8[§cFly§8] §7Flight enabled.");
+            player.sendMessage("§8[§cFly§8] §fFlight enabled.");
         }
 
         return true;
