@@ -125,6 +125,12 @@ public class ProtectListener implements Listener {
         event.setQuitMessage("§8[§c-§8] §f"+ event.getPlayer().getName() +" §7left the server.");
     }
 
+    @EventHandler
+    public void onChat(AsyncPlayerChatEvent event) {
+        event.setCancelled(true);
+        Bukkit.getServer().broadcastMessage("§7"+ event.getPlayer().getName() +" §c» §f"+ event.getMessage());
+    }
+
     private void pickupRandomGroup(Player player) {
         List<String> groups = Lists.newArrayList("owner", "admin", "developer", "helper", "builder");
 
